@@ -1,4 +1,4 @@
-from estudiantes.registro import cargar_estudiantes
+from estudiantes.registro import cargar_estudiantes, ordenar_y_mostrar_estudiantes
 
 def main():
     ruta = "estudiantes/estudiantes.csv"
@@ -9,8 +9,7 @@ def main():
         return
     
     print("\n Lista de estudiantes:")
-    for nombre, nota in estudiantes:
-        print(f"{nombre:10} - {nota:.2f}")
+    ordenar_y_mostrar_estudiantes(estudiantes)
 
 if __name__ == "__main__":
     main()

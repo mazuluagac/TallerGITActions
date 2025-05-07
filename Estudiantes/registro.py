@@ -22,16 +22,16 @@ def cargar_estudiantes(ruta_csv):
         print(f"Ocurrió un error al leer el archivo: {e}")
     return estudiantes
 
-def mostrar_estudiantes_tabla(estudiantes):
-    """
-    Muestra los estudiantes ordenados alfabéticamente en formato tabular.
-    """
-    if not estudiantes:
-        print("No hay estudiantes válidos para mostrar.")
-        return
+def ordenar_y_mostrar_estudiantes(estudiantes):
+            """
+            Ordena a los estudiantes alfabéticamente y los imprime en formato tabular.
+            """
+            if not estudiantes:
+                print("No hay estudiantes para mostrar.")
+                return
 
-    estudiantes_ordenados = sorted(estudiantes, key=lambda x: x[0])
-    print(f"{'Nombre':<20} {'Nota':>5}")
-    print("-" * 26)
-    for nombre, nota in estudiantes_ordenados:
-        print(f"{nombre:<20} {nota:>5.2f}")
+            estudiantes_ordenados = sorted(estudiantes, key=lambda x: x[0])
+            print(f"{'Nombre':<20} {'Nota':>5}")
+            print("-" * 26)
+            for nombre, nota in estudiantes_ordenados:
+                print(f"{nombre:<20} {nota:>5.2f}")       
