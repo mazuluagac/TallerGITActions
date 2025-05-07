@@ -23,15 +23,26 @@ def cargar_estudiantes(ruta_csv):
     return estudiantes
 
 def ordenar_y_mostrar_estudiantes(estudiantes):
-            """
-            Ordena a los estudiantes alfabéticamente y los imprime en formato tabular.
-            """
-            if not estudiantes:
-                print("No hay estudiantes para mostrar.")
-                return
+    """
+    Ordena a los estudiantes alfabéticamente y los imprime en formato tabular.
+    """
+    if not estudiantes:
+        print("No hay estudiantes para mostrar.")
+        return
 
-            estudiantes_ordenados = sorted(estudiantes, key=lambda x: x[0])
-            print(f"{'Nombre':<20} {'Nota':>5}")
-            print("-" * 26)
-            for nombre, nota in estudiantes_ordenados:
-                print(f"{nombre:<20} {nota:>5.2f}")       
+    estudiantes_ordenados = sorted(estudiantes, key=lambda x: x[0])
+    print(f"{'Nombre':<20} {'Nota':>5}")
+    print("-" * 26)
+    for nombre, nota in estudiantes_ordenados:
+        print(f"{nombre:<20} {nota:>5.2f}")       
+
+def calcular_promedio(estudiantes):
+    """
+    Calcula el promedio de las notas de los estudiantes y lo muestra con dos decimales.
+    """
+    if not estudiantes:
+        print("No hay estudiantes para calcular el promedio.")
+        return
+
+    promedio = sum(nota for _, nota in estudiantes) / len(estudiantes)
+    print(f"El promedio general de las notas es: {promedio:.2f}")

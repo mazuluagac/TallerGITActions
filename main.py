@@ -1,4 +1,4 @@
-from estudiantes.registro import cargar_estudiantes, ordenar_y_mostrar_estudiantes
+from estudiantes.registro import cargar_estudiantes, ordenar_y_mostrar_estudiantes, calcular_promedio
 
 def main():
     ruta = "estudiantes/estudiantes.csv"
@@ -8,8 +8,12 @@ def main():
         print("No se encontraron estudiantes válidos.")
         return
     
-    print("\n Lista de estudiantes:")
+    print("\nLista de estudiantes:")
     ordenar_y_mostrar_estudiantes(estudiantes)
+    
+    #print("\nCálculo del promedio:")
+    print("\nPromedio de notas:")
+    calcular_promedio(estudiantes)
 
 if __name__ == "__main__":
     main()
