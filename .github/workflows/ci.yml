@@ -12,12 +12,7 @@ jobs:
 
     steps:
     - name: Checkout código
-      uses: actions/checkout@v3
-
-    - name: Configurar Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.10'
+      uses: actions/checkout@v4
 
     - name: Ejecutar script
       run: python main.py
